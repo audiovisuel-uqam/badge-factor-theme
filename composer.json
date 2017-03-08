@@ -1,12 +1,11 @@
 {
-  "name": "ctrlweb/badge-factor-theme",
+  "name": "DigitalPygmalion/badge-factor-theme",
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "Badge Factor starter theme based on Roots Sage.",
   "authors": [
     {
-      "name": "Daniel Le Blanc",
-      "email": "daniel.leblanc@ctrlweb.ca",
+      "name": "ctrlweb",
       "homepage": "https://ctrlweb.ca/"
     }
   ],
