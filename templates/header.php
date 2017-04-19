@@ -1,6 +1,7 @@
+<?php use Roots\Sage\Extras; ?>
 <header class="banner">
   <div class="container">
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php echo Extras\site_brand(); ?></a>
     <nav class="nav-primary">
       <?php
       if (has_nav_menu('primary_navigation')) :
