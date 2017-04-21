@@ -9,10 +9,12 @@
 	get_header();
 ?>
 
-<?php get_template_part('partials/title_box'); ?>
+<?php get_template_part('templates/page', 'header'); ?>
+
 <div class="container row">
     <section class="profile-members-badges">
         <div class="profile-members-badges-heading">
+            <span class="separator-prefix"></span>
             <h3 class="profile-members-badges-heading-title"><?php _e('Badges Portfolio'); ?></h3>
         </div>
         <ul class="profile-members-badges-list">

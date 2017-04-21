@@ -7,3 +7,239 @@ $sidebar-sm-columns:    4;
 
 // Colors
 $brand-primary:         #27ae60;
+
+
+//These variables are coming directly from the cadre21 theme
+
+// Custom styles for theme: cadre21
+
+// Colors
+
+$brand-primary:         #0081c5;
+$brand-accent:          #00acc8;
+$brand-accent-primary:  #d7df21;
+$brand-gray:            #eaeded;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Montserrat', sans-serif;
+
+$font-size-h1:            floor(($font-size-base * 3.2857142857)); // ~46px
+$font-size-h2:            floor(($font-size-base * 2.4285714286)); // ~34px
+$font-size-h4:            ceil(($font-size-base * 1.2142857143)); // ~17px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-weight:    700;
+
+//== Links & Buttons
+//
+
+.profile-organisation-badge-link {
+  color: $brand-primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $brand-accent;
+  }
+}
+
+.profile-organisation-badge-granted-link,
+.badges-unique-members-single-link,
+.badges-generic-members-single-link {
+  @extend .profile-organisation-badge-link;
+}
+
+.badges-unique-granted-link {
+  display: inline-block;
+  text-transform: uppercase;
+  //padding: 15px 35px 13px;
+  padding:12px 0;
+  border-radius: 10px;
+  background-color: $brand-primary;
+  color: #fff;
+  box-shadow: 0 3px 0 darken($brand-primary, 10%);
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  border: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active,
+  &:active:focus,
+  &:focus:active {
+    background-color: $brand-accent;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 3px 0 darken($brand-accent, 10%);
+    border: none;
+    outline: none;
+  }
+}
+
+.profile-organisation-badges-cta-link {
+  @extend .profile-organisation-badge-link;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active,
+  &:active:focus,
+  &:focus:active {
+    text-decoration: none;
+  }
+}
+
+.profile-organisation-badges-granted-cta-link,
+.badges-unique-members-cta-link,
+.badges-unique-groups-cta-link,
+.badges-generic-members-cta-link,
+.badges-generic-groups-cta-link,
+.members-community-recent-cta-link,
+.members-community-leaderboard-cta-link,
+.members-community-organisation-cta-link {
+  @extend .profile-organisation-badges-cta-link;
+}
+
+//== Components
+//
+
+.profile-organisation-badges-heading {
+  border-bottom: solid 2px $brand-gray;
+}
+
+.profile-organisation-image,
+.profile-organisation-badge-image {
+  border-radius: 0;
+}
+
+.profile-organisation-social-link {
+  color: #fff;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active,
+  &:active:focus,
+  &:focus:active {
+    color: $brand-accent;
+  }
+}
+
+.profile-members-social-link {
+  @extend .profile-organisation-social-link;
+}
+
+.badges-unique-content-comp-item {
+  @extend .text-uppercase;
+  color: $brand-primary;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.members-community-search-input-wrap {
+  position: relative;
+}
+
+.members-community-search-input-text {
+  border: 2px solid $brand-gray;
+  border-radius: 0;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  height: 30px;
+}
+
+.members-community-search-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0 none;
+  background-color: transparent;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  color: $brand-primary;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active,
+  &:active:focus,
+  &:focus:active {
+    background-color: transparent;
+    border: 0 none;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    color: $brand-accent;
+  }
+}
+
+.members-community-recent-single-description-link {
+  @extend .text-uppercase;
+  font-weight: 700;
+  color: $brand-primary;
+  padding: 0;
+  border: 0 none;
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:active,
+  &:active:focus,
+  &:focus:active {
+    background-color: transparent;
+    color: $brand-accent;
+    text-decoration: underline;
+  }
+}
+
+.profile-organisation-badges-heading {
+  border-bottom: 6px solid $brand-gray;
+  position: relative;
+}
+
+.separator-prefix {
+  display: inline-block;
+  width: 66px;
+  height: 6px;
+  background-color: $brand-accent-primary;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  z-index: 10;
+  border-right: 5px solid #fff;
+}
+
+.profile-members-badges-cta-item-btn {
+  border: 2px solid $brand-gray;
+  border-radius: 0;
+}
+
+
+.product_meta{
+  width: 200px;
+  float: right;
+  margin-top: 20px;
+
+  @media all and (max-width: $screen-sm-min){
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+}
+
+#buddypress #members-list li{
+  display: inline-block;
+  box-sizing: border-box;
+  width: 33%;
+
+  @media all and (max-width: $screen-md-min){
+    width: 49.5%;
+  }
+
+  @media all and (max-width: $screen-sm-min){
+    width: 100%;
+  }
+}

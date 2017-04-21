@@ -1,0 +1,314 @@
+// Profile Members Heading
+
+.profile-members-heading {
+
+  @media (max-width: $screen-sm){
+    margin:0;
+  }
+
+  .member-picture-name {
+
+    background-color: $brand-primary;
+    height: 200px;
+    border-left: solid 10px $brand-accent-primary;
+    @media (max-width: $screen-md){
+      height:auto;
+      padding:25px 0;
+    }
+    h2 {
+      margin:0;
+      @media (max-width: $screen-md){
+        margin:15px 0 15px 0;
+      }
+    }
+
+    .profile-members-heading-figure {
+      @media (max-width: $screen-sm){
+        float:none;
+        padding-bottom: 25px;
+      }
+    }
+
+    .profile-members-heading-infos {
+      @media (max-width: $screen-sm){
+        float:none;
+        text-align: center;
+      }
+    }
+  }
+
+  .profile-members-content {
+    width: 68%;
+    margin-left:33%;
+    margin-top:-20px;
+
+    @media (max-width: $screen-md){
+      width:75%;
+      margin: auto;
+      padding-top:25px;
+      p{
+        padding-top:30px;
+      }
+    }
+    @media (max-width: $screen-md){
+      width:100%;
+      margin: auto;
+      padding-top:25px;
+    }
+  }
+
+  .profile-members-header-content-container {
+    padding-bottom: 25px;
+    width: 68%;
+    margin-left: 33%;
+
+    @media all and (max-width: $screen-md){
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+.profile-members-heading-figure {
+  //@extend .profile-organisation-heading-figure;
+  @extend .col-sm-4;
+  @extend .text-center;
+  float: left;
+
+  @media (min-width: $screen-md){
+    display: block;
+    margin-top: 40px;
+  }
+
+}
+
+.profile-members-image {
+  //@extend .profile-organisation-image;
+
+  @extend .img-responsive;
+
+  margin: 0 auto;
+  height: 114px;
+  @media (min-width: $screen-md) {
+    height: auto;
+  }
+}
+
+.profile-members-heading-infos {
+  //@extend .profile-organisation-heading-infos;
+
+  @extend .col-md-8;
+  margin-bottom: 0;
+  float: left;
+
+  @media (min-width: $screen-md) {
+    float: initial;
+    margin: 50px 0;
+  }
+}
+
+.profile-members-name {
+  //@extend .profile-organisation-name;
+
+  padding-top: 0;
+  color: #fff;
+  @media (min-width: $screen-md) {
+    padding-top: 15px;
+  }
+
+  @media (min-width: $screen-sm){
+    margin: 20px 0 100px;
+  }
+}
+
+.profile-members-social-list {
+  @extend .list-unstyled;
+  margin: 20px 0;
+}
+
+.profile-members-social-item {
+  //@extend .profile-organisation-social-item;
+
+  padding-right: 0;
+  display: inline-block;
+}
+
+.profile-members-heading-content-desc-list {
+  @extend .dl-horizontal;
+  margin: 30px 0 0;
+  font-size: 12px;
+
+  @media (min-width: $screen-sm){
+    width: calc(100% + 15px);
+  }
+
+  dt {
+
+    @media (min-width: $screen-sm){
+      text-align: left;
+      width: 180px;
+    }
+  }
+}
+
+.profile-members-heading-content-desc-list-title {
+  font-weight: 600;
+  padding: 5px 5px 0;
+  border-top: solid 1px $gray-light;
+  font-size: 14px;
+
+  @media (min-width: $screen-sm){
+    padding: 5px;
+  }
+}
+
+
+.profile-members-heading-content-desc-list-text {
+  padding: 0 5px 5px;
+  font-size: 14px;
+
+  @media (min-width: $screen-sm){
+    border-top: solid 1px $gray-light;
+    margin: 0 0 0 180px;
+    padding-top: 5px;
+  }
+}
+
+.profile-members-badges {
+  //@extend .profile-organisation-badges;
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-sm){
+    margin-bottom: 30px;
+  }
+}
+
+.profile-members-badges-heading {
+
+  //@extend .profile-organisation-badges-heading;
+
+  float: left;
+  width: 100%;
+  border-bottom: 6px solid $brand-gray;
+  position: relative;
+}
+
+.profile-members-badges-heading-title {
+  @extend .col-sm-6;
+  margin-top: 0;
+}
+
+.separator-prefix {
+  display: inline-block;
+  width: 66px;
+  height: 6px;
+  background-color: $brand-accent-primary;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  z-index: 10;
+  border-right: 5px solid #fff;
+}
+
+.profile-members-badges-available {
+  //@extend .profile-organisation-badges-available;
+
+  display: block;
+  font-size: $font-size-small; //12px
+
+  @media (min-width: $screen-sm){
+    display: initial;
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+}
+
+.profile-members-badges-cta {
+  @extend .col-sm-3;
+  @extend .text-right;
+  @extend .list-unstyled;
+}
+
+.profile-members-badges-cta-item {
+  @extend .btn-group;
+}
+
+.profile-members-badges-cta-item-btn  {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .dropdown-toggle;
+  width: 100px;
+  text-align: left;
+
+  border: 2px solid $brand-gray;
+  border-radius: 0;
+
+  @media (min-width: $screen-sm){
+    width: 200px;
+  }
+}
+
+.profile-members-badges-cta-item-btn-caret {
+  @extend .fa !optional;
+  @extend .fa-caret-down !optional;
+  @extend .fa-fw !optional;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.profile-members-badges-cta-item-dropdown {
+  @extend .dropdown-menu;
+  width: 200px;
+  right: 0;
+  left: auto;
+}
+
+.profile-members-badges-list {
+  //@extend .profile-organisation-badges-list;
+
+  @extend .list-unstyled;
+  @extend .text-center;
+  float: left;
+  width: 100%;
+}
+
+.profile-members-badge {
+  //@extend .profile-organisation-badge;
+
+  @extend .col-xs-6;
+  margin-top: 15px;
+  min-height: 226px;
+
+  @media (min-width: $screen-sm){
+    width: 33.33333%;
+  }
+
+  @media (min-width: $screen-lg){
+    width: 16.66666%;
+  }
+}
+
+.profile-members-badge-image {
+  //@extend .profile-organisation-badge-image;
+  @extend .img-responsive;
+  //@extend .img-circle;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-members-badge-description {
+  //@extend .profile-organisation-badge-description;
+
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-members-badges {
+  @media (max-width: $screen-sm){
+    padding-top:50px;
+  }
+}

@@ -99,7 +99,8 @@ $htmlTemplate = '';
 
 get_header(); ?>
 
-<?php get_template_part('partials/title_box'); ?>
+<?php //get_template_part('partials/title_box'); ?>
+<?php get_template_part('templates/page', 'header'); ?>
 	<div class="container">
     <?php
 

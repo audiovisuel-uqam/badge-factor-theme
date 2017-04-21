@@ -4,6 +4,11 @@ namespace Roots\Sage\Setup;
 
 use Roots\Sage\Assets;
 
+include_once("widgets/footer_contact.php");
+include_once("widgets/header_address.php");
+include_once("widgets/header_login.php");
+include_once("widgets/header_phone.php");
+
 /**
  * Theme setup
  */
@@ -33,7 +38,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
+    'primary_navigation' => __('Primary Navigation', 'sage'),
+    'footer_navigation' => __('Footer Navigation', 'sage')
   ]);
 
   // Enable post thumbnails
@@ -60,23 +66,65 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  * Register sidebars
  */
 function widgets_init() {
-  register_sidebar([
-    'name'          => __('Primary', 'sage'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
+    register_sidebar([
+      'name'          => __('Primary', 'sage'),
+      'id'            => 'sidebar-primary',
+      'before_widget' => '<section class="widget %1$s %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>'
+    ]);
 
-  register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
+    /* The widget area for the sub header */
+    register_sidebar([
+        'name'            => __('Header', 'sage'),
+        'id'              => 'sidebar-header',
+        'before_widget'   => '',
+        'after_widget'    => '',
+        'before_title'    => '<h3>',
+        'after_title'     => '</h3>'
+    ]);
+
+
+    /* The widget area for the first footer column @Todo: Make these all the same colums, now these are all specific for one property*/
+    register_sidebar([
+        'name'          => __('Footer column 1', 'sage'),
+        'id'            => 'sidebar-footer-column-1',
+        'before_widget' => '<div class="footer-mission %1$s %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="footer-mission-heading-title">',
+        'after_title'   => '</h4>'
+    ]);
+
+    /* The widget area for the second footer column @Todo: Make these all the same colums, now these are all specific for one property */
+    register_sidebar([
+        'name'          => __('Footer column 2', 'sage'),
+        'id'            => 'sidebar-footer-column-2',
+        'before_widget' => '<div class="footer-articles %1$s %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="footer-articles-heading-title">',
+        'after_title'   => '</h4>'
+    ]);
+
+    /* The widget area for the third footer column @Todo: Make these all the same colums, now these are all specific for one property */
+    register_sidebar([
+        'name'          => __('Footer column 3', 'sage'),
+        'id'            => 'sidebar-footer-column-3',
+        'before_widget' => '<div class="footer-contact %1$s %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="footer-contact-heading-title">',
+        'after_title'   => '</h4>'
+    ]);
+
+    /* The widget area for the second footer column @Todo: Make these all the same colums, now these are all specific for one property */
+    register_sidebar([
+        'name'          => __('Footer column 4', 'sage'),
+        'id'            => 'sidebar-footer-column-4',
+        'before_widget' => '<div class="footer-twitter %1$s %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="footer-twitter-heading-title">',
+        'after_title'   => '</h4>'
+    ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
@@ -91,7 +139,11 @@ function display_sidebar() {
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
     is_front_page(),
-    !is_page_template('template-custom.php'),
+    is_page_template('template-components.php'),
+    is_page_template('template-homepage.php'),
+    is_page(),
+    is_singular('organisation'), //No Sidebar on a
+    is_singular('badges'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

@@ -1,0 +1,126 @@
+// Profile Organisation Badges
+
+.container.single-badge{
+  max-width: 100%;
+}
+
+.badge-description-heading{
+  width: 100%;
+  display: inline-block;
+
+  .add-badge{
+    float: right;
+    width: 200px;
+    display: inline-block;
+    line-height: 100%;
+  }
+}
+
+.profile-organisation-badges {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-sm){
+    margin-bottom: 30px;
+  }
+}
+
+.profile-organisation-badges-heading {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid $gray-light;
+}
+
+.profile-organisation-badges-heading-title {
+  @extend .col-sm-8;
+  margin-top: 0;
+}
+
+.profile-organisation-badges-available {
+  display: block;
+  font-size: $font-size-small; //12px
+
+  @media (min-width: $screen-sm){
+    display: initial;
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+}
+
+.profile-organisation-badges-cta {
+  @extend .col-sm-4;
+  @extend .text-right;
+  @extend .list-unstyled;
+}
+
+.profile-organisation-badges-list {
+  @extend .list-unstyled;
+  @extend .text-center;
+  float: left;
+  width: 100%;
+}
+
+.profile-organisation-badge {
+  @extend .col-xs-6;
+  margin-top: 15px;
+  min-height: 226px;
+
+  @media (min-width: $screen-sm){
+    width: 33.33333%;
+  }
+
+  @media (min-width: $screen-lg){
+    width: 16.66666%;
+  }
+}
+
+.profile-organisation-badge-image {
+  @extend .img-responsive;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-organisation-badge-details a.profile-organisation-badge-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.profile-organisation-badge-description {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-organisation-badges-granted-overall {
+  @extend .profile-organisation-badge-description;
+  font-weight: 500;
+}
+
+.badge-members-heading{
+  @extend .profile-members-badges-heading;
+}
+
+.badge-members-heading-title{
+  @extend .profile-members-badges-heading-title;
+}
+
+.badges-unique-members-list {
+  @extend .profile-organisation-badges-list;
+}
+
+.badges-unique-members-single {
+  @extend .profile-organisation-badge;
+}
+
+.badges-unique-members-single-image {
+  @extend .profile-organisation-badge-image;
+}
+
+.badges-unique-members-single-description {
+  @extend .profile-organisation-badge-description;
+}
+
+.badges-unique-members-single-overall {
+  @extend .profile-organisation-badges-granted-overall;
+}

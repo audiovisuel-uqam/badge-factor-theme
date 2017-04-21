@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import "common/default";
 @import "common/variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
@@ -17,3 +20,7 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+@import "layouts/profile";
+@import "layouts/organisation";
+@import "layouts/badge";
+@import "layouts/register";

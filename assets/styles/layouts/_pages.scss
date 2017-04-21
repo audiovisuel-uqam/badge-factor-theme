@@ -1,0 +1,20 @@
+.page-main-heading {
+  background-color: $brand-primary;
+  border-left: solid 10px $brand-accent-primary;
+
+  @media (min-width: $screen-md){
+    border-left: solid 20px $brand-accent-primary;
+  }
+}
+
+.page-main-heading-title {
+  color: #fff;
+  font-size: 32px;
+  padding: 20px;
+  margin: 0;
+
+  @media (min-width: $screen-md){
+    font-size: 45px;
+    padding: 50px 40px;
+  }
+}

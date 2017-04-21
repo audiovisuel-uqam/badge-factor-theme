@@ -14,7 +14,8 @@ $sage_includes = [
   'lib/extras.php',    // Custom functions
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
-  'lib/wrapper.php',   // Theme wrapper class
+  'lib/wrapper.php',   // Theme wrapper class'
+  'lib/walker.php',    // Custom menu walker
   'lib/customizer.php' // Theme customizer
 ];
 
@@ -26,3 +27,5 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
