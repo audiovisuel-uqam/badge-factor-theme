@@ -43,9 +43,7 @@ class HeaderLoginWidget extends \WP_Widget
             <span class="glyphicon glyphicon-user header-main-top-icon"></span>
             <ul class="header-main-top-sublist">
                 <?php if(is_user_logged_in()): ?>
-                    <?php
-                    $current_user = wp_get_current_user();
-                    ?>
+                    <?php $current_user = wp_get_current_user(); ?>
                     <?php if(!empty($current_user->user_login)): ?>
                         <li class="header-main-top-sublist-item">
                             <a class="header-main-top-sublist-link" href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>"><?php _e('My account', 'badgefactor-theme'); ?></a>
@@ -58,12 +56,12 @@ class HeaderLoginWidget extends \WP_Widget
                     </li>
                 <?php else: ?>
                     <li class="header-main-top-sublist-item">
-                        <a class="header-main-top-sublist-link" href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>">
+                        <a class="header-main-top-sublist-link" href="<?php echo get_permalink( $GLOBALS['badgefactor']->bf_login_page() ); ?>">
                             <?php _e('Log in', 'badgefactor'); ?>
                         </a>
                     </li>
                     <li class="header-main-top-sublist-item">
-                        <a class="header-main-top-sublist-link" href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>"><?php _e('Register', 'badgefactor-theme'); ?></a>
+                        <a class="header-main-top-sublist-link" href="<?php echo get_permalink( $GLOBALS['badgefactor']->bf_login_page() ); ?>"><?php _e('Register', 'badgefactor-theme'); ?></a>
                     </li>
                 <?php endif; ?>
             </ul>
