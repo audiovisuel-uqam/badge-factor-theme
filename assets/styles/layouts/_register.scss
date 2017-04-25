@@ -1,12 +1,75 @@
 #register-page{
   padding-top: 60px;
 
+  	h2{
+  		font-size: 34px;
+  	}
+
+	form {
+		 border: 1px solid #d3ced2;
+		 border-radius: 5px;
+		 margin: 2em 0;
+	  	 padding: 20px;
+
+	  	input.input {
+	  	 width: 90%;
+	  	}
+	    input[type='submit']{
+	     color: #515151;
+	     border-radius: 3px;
+	     background-color: #ebe9eb;
+	     border: none;
+	     display: inline-block;
+	     font-weight: 700;
+	     font-size: 100%;
+	     padding: 0.6em 1em;
+	    }
+	    input[type='submit']:hover{
+	     background-color: #dad8da;
+	     border: none; 
+	    }
+	    label.field-required:after{
+	  	 content:' *';
+	  	 color: red;
+	  	}
+	  	div.editfield label:after{
+	  	 content:' *';
+	  	 color: red;
+	  	}
+
+  	}
+
   .login-section{
     float: left;
     width: 48%;
+
+    .login-remember{
+     display: inline-block;
+    }
+    .login-submit{
+     display: inline-block;
+    }
   }
 
   .register-section{
+  	float: right;
+  	width: 48%;
+
+  	form div.submit{
+  	 float: left;
+  	 width: 100%; 
+  	 display: inline-block;
+  	}
 
   }
+
+  p.account-confirmation{
+	border: 1px solid #d3ced2;
+    border-radius: 3px;
+    margin: 2em 0;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
 }

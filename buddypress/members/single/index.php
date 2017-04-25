@@ -5,5 +5,5 @@
 	} else if (strpos($_SERVER['REQUEST_URI'],'badges') !== false) {
 	    include 'template-badge.php';
 	} else {
-	    include 'template-profile.php';
+	   include 'template-profile.php';
 	}

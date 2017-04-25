@@ -9,8 +9,8 @@ $currentUserNiceUrl = get_permalink(MEMBER_PAGE_ID) . $currentUserData->user_nic
 $currentUserBadgeList = $GLOBALS['badgefactor']->get_user_achievements($userID);
 
 // Check if current badge is a real badge name attributed
-
 $string = end((explode('/', rtrim($_SERVER['REQUEST_URI'], '/'))));
+
 $find = $currentUserData->user_nicename . '-';
 
 $replace = '';
@@ -112,10 +112,10 @@ get_header(); ?>
                     <img class="badge-single-img" src="'.$badgeImage.'" class="profile-members-image" width="100%" />
     
                     <div style="margin-top:15px;text-align:center;">
-                        <a href="'.$currentUserNiceUrl.'" style="text-decoration:none; font-size:15px;">'.$currentUserData->user_nicename.'</a><br>
+                        <a class="username" href="'.$currentUserNiceUrl.'" style="text-decoration:none;">'.$currentUserData->user_nicename.'</a><br>
                         <p style="text-align:center;">'.__('a obtenu ce badge', 'badgefactor').'!</p>
                         <h4>Octroyé par</h4>
-                        <a href="'.$currentUserBadgeIssuer->url.'" style="text-decoration:none; font-size:15px;">'.$currentUserBadgeIssuer->name.'</a>
+                        <a href="'.$currentUserBadgeIssuer->url.'" style="text-decoration:none;">'.$currentUserBadgeIssuer->name.'</a>
                     </div>';
 
     $htmlTemplate .= '<figcaption class="badges-unique-details">';
@@ -123,14 +123,13 @@ get_header(); ?>
     {
         $htmlTemplate .= '
             <dl class="badges-unique-definition">
-                <dt class="badges-unique-definition-term">Endossé par</dt>
                 <dd class="badges-unique-definition-description">';
 
             foreach ($endorsers as $endorser)
             {
               $htmlTemplate .= '
               <ul class="badges-unique-definition-description-list">
-                              <li class="badges-unique-definition-description-item">' . $endorser->post_title . '</li>
+                <li class="badges-unique-definition-description-item">' . $endorser->post_title . '</li>
               </ul>
               ';
             }
@@ -144,23 +143,23 @@ get_header(); ?>
               <h3 class="badges-unique-content-heading">Description</h3>
               <p class="badges-unique-content-text">'. $currentBadgePost->post_content. '</p>
               <h3 class="badges-unique-content-heading">Compétences</h3>
-              <ul class="badges-unique-content-comp-list">
+              <ul class="badges-unique-content-comp-list no-padding">
                 <?php for ($i=0; $i < 4; $i++) { ?>
                   <li class="badges-unique-content-comp-item">
-                    <a href="#" class="badges-unique-content-comp-link" title="Neque Porro">Lorem</a>
+                  <p>Lorem</p>
                   </li>
                   <li class="badges-unique-content-comp-item">
-                    <a href="#" class="badges-unique-content-comp-link" title="Neque Porro Quisquam">Ipsum</a>
+                    <p>Ipsum</p>
                   </li>
                   <li class="badges-unique-content-comp-item">
-                    <a href="#" class="badges-unique-content-comp-link" title="Quisquam">Quisquam</a>
+                    <p>Dolor</p>
                   </li>
                 <?php } ?>
               </ul>
               <h3 class="badges-unique-content-heading">Critères d\'obtention</h3>
               <p class="badges-unique-content-text">'. $badgeCriteriaText. '</p>
               
-              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no-padding">
                 <h3 class="badges-unique-content-heading">Date d\'octroie</h3>
                 <span class="badges-unique-granted-date">' . date('d F Y', $currentUserAchievementsUid->issuedOn) . '</span>
               </div>';
