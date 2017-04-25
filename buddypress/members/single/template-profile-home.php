@@ -10,10 +10,10 @@
 <section>
     <ul class="home-page-development-button-list">
         <li class="home-page-development-button-list-item">
-            <a class="home-page-development-button" href="<? echo bp_loggedin_user_domain() . 'profile/edit/'; ?>"><?php _e('Modify my profile', 'badgefactor-theme'); ?></a>
+            <a class="home-page-development-button" href="<?php echo bp_loggedin_user_domain() . 'profile/edit/'; ?>"><?php _e('Modify my profile', 'badgefactor-theme'); ?></a>
         </li>
         <li class="home-page-development-button-list-item">
-            <a class="home-page-development-button" href="<? echo bp_loggedin_user_domain(); ?>"><?php _e('Access my public profile', 'badgefactor-theme')?></a>
+            <a class="home-page-development-button" href="<?php echo bp_loggedin_user_domain(); ?>"><?php _e('Access my public profile', 'badgefactor-theme')?></a>
         </li>
     </ul>
 </section>
