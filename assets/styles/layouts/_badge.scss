@@ -1,5 +1,33 @@
 // Profile Organisation Badges
 
+h3{
+  font-size: 14px;
+}
+
+section.profile-members-single-badge{
+  margin-top: 60px;
+  ul{
+   list-style-type: none;
+  } 
+}
+.no-padding{
+  padding:0;
+}
+
+div a.username{
+  font-size: 20px;
+}
+figcaption{
+  text-align: center;
+
+  ul{
+    padding: 0;
+  }
+}
+
+.badges-unique-content-heading{
+  margin-top: 35px;
+}
 .container.single-badge{
   max-width: 100%;
 }
@@ -126,7 +154,6 @@
 }
 
 .badge-image-wrapper{
-
   img{
     @extend .img-responsive;
   }

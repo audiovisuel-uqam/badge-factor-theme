@@ -64,7 +64,9 @@
         <?php
 
         // Check if current badge is a real badge name attributed
-        $uri_array = (explode('/', rtrim($_SERVER['REQUEST_URI'], '/')));
+        //$uri_array = (explode('/', rtrim($_SERVER['REQUEST_URI'], '/')));
+        $uri_array = end((explode('/', rtrim('parkour3-test-de-badge', '/'))));
+
         $string = end($uri_array);
         $find = $userData->user_nicename . '-';
 
