@@ -97,9 +97,16 @@
         ?>
 
         <section class="page-main-heading">
-            <h1 class="page-main-heading-title">Badge</h1>
+            <h1 class="page-main-heading-title"><?php _e('Badge', 'badgefactor-theme'); ?></h1>
         </section>
         <?php global $wp;
+
+    elseif ( bp_is_my_profile() && strpos($wp->request, 'profile') ): ?>
+        <section class="page-main-heading">
+            <h1 class="page-main-heading-title"><?php _e('My account', 'badgefactor-theme'); ?></h1>
+        </section>
+        <?php
+
     elseif (preg_match("/members\/(.*)/", $wp->request)): ?>
         <section class="profile-members-heading">
             <div class="col-xs-12">
