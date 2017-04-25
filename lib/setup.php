@@ -162,3 +162,8 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+
+//Disable the cover picture in buddypress
+add_filter( 'bp_is_profile_cover_image_active', '__return_false' );
+add_filter( 'bp_is_groups_cover_image_active', '__return_false' );
