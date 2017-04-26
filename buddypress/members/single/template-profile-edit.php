@@ -36,7 +36,7 @@
             
 
 
-            if($currentEmail != $inputEmail && filter_var($inputEmail, FILTER_VALIDATE_EMAIL)){
+            //if($currentEmail != $inputEmail && filter_var($inputEmail, FILTER_VALIDATE_EMAIL)){
 
                 $return = wp_update_user( array( 
                     'ID'         => $user->ID,
@@ -47,9 +47,18 @@
                     'user_url'   => $url,
                     'description'=> $description
                 ));
+                //var_dump($return);
+                //die();
+                /*
+                update_user_meta( $user->ID, 'first_name', $firstName);
+                update_user_meta( $user->ID, 'last_name', $lasttName);
+                update_user_meta( $user->ID, 'nickname', $nickname);
+                update_user_meta( $user->ID, 'user_url', $url);
+                update_user_meta( $user->ID, 'description', $description);
+                */
 
                 $user = wp_get_current_user();
-            }
+            //}
         }
 
         $user = wp_get_current_user();
