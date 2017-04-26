@@ -167,3 +167,41 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 //Disable the cover picture in buddypress
 add_filter( 'bp_is_profile_cover_image_active', '__return_false' );
 add_filter( 'bp_is_groups_cover_image_active', '__return_false' );
+
+//Theme buddypress installation
+
+function init_xprofile_fields(){
+  // Insert New Field
+
+  $field =  array (
+             'field_id'        => 1001,
+             'field_group_id'  => 2,
+             'name'            => 'qwertyuiop',
+             'field_order'     => 1,
+             'is_required'     => false,
+             'type'            => 'textbox'
+      );
+
+
+  $result = xprofile_get_field(1001);
+  if(is_null($result->id)){
+    //xprofile_insert_field($field);
+  }
+  function xprofile_get_field( $field, $user_id = null, $get_data = true ) {
+    if ( $field instanceof BP_XProfile_Field ) {
+      $_field = $field;
+    } elseif ( is_object( $field ) ) {
+      $_field = new BP_XProfile_Field();
+      $_field->fill_data( $field );
+    } else {
+      $_field = BP_XProfile_Field::get_instance( $field, $user_id, $get_data );
+    }
+    if ( ! $_field ) {
+      return null;
+    }
+    return $_field;
+  }
+
+
+}
+add_action('init',__NAMESPACE__ . '\\init_xprofile_fields');
