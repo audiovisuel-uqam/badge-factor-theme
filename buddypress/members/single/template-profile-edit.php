@@ -149,8 +149,6 @@
 
                 </form>
             </div>
-        <?php } ?>
-
         <div id="buddypress">
             <!--id and classes serves to apply same CSS rules on both forms -->
                 <form class="standard-form" method="post">
@@ -173,6 +171,8 @@
 
                 </form>
             </div>
+        <?php } ?>
+
 
         <?php
         $userID = bp_displayed_user_id();
