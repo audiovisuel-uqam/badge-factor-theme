@@ -152,3 +152,9 @@ figcaption{
 .badges-unique-members-single-overall {
   @extend .profile-organisation-badges-granted-overall;
 }
+
+.badge-image-wrapper{
+  img{
+    @extend .img-responsive;
+  }
+}
