@@ -15,7 +15,7 @@
     <section class="profile-members-badges">
         <div class="profile-members-badges-heading">
             <span class="separator-prefix"></span>
-            <h3 class="profile-members-badges-heading-title"><?php _e('Badges Portfolio'); ?></h3>
+            <h3 class="profile-members-badges-heading-title"><?php _e('Badges Portfolio', 'badgefactor-theme'); ?></h3>
         </div>
         <ul class="profile-members-badges-list">
 
@@ -26,7 +26,7 @@
                     {
                         $badgePost = get_post($achievement->badge_id);
 
-                        $currentBadgeUrl = $currentUserNiceUrl . '/badges/' . $currentUserData->user_nicename . '-' . $badgePost->post_name;
+                        $currentBadgeUrl = '/?badges='.$badgePost->post_name.'&member='.$currentUserData->user_nicename;
 
 
                         $htmlTemplates .= '<li class="profile-members-badge"><figure class="profile-members-badge-figure">
