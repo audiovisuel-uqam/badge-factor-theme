@@ -186,7 +186,7 @@
             </div>
         </section>
     <?php else: ?>
-    <?php endif; ?>
+    <?php endif; ?> 
 <?php else: ?>
     <section class="page-main-heading">
         <h1 class="page-main-heading-title">
