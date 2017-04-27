@@ -1,6 +1,4 @@
 <?php use Roots\Sage\Titles; ?>
-
-
 <?php if (is_singular('organisation')): ?>
     <section class="profile-organisation-heading">
         <figure class="profile-organisation-heading-figure">
@@ -63,9 +61,10 @@
 
         <?php
 
+
         // Check if current badge is a real badge name attributed
-        //$uri_array = (explode('/', rtrim($_SERVER['REQUEST_URI'], '/')));
-        $uri_array = end((explode('/', rtrim('parkour3-test-de-badge', '/'))));
+        $uri_array = (explode('/', rtrim($_SERVER['REQUEST_URI'], '/')));
+        //$uri_array = end((explode('/', rtrim('parkour3-test-de-badge', '/'))));
 
         $string = end($uri_array);
         $find = $userData->user_nicename . '-';
