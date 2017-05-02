@@ -153,6 +153,16 @@
 }
 
 .header-main-search-form {
+  button[type="submit"]{
+    right: 15px;
+    top: 16px;
+  }
+  @media (max-width: $screen-md){
+    button[type="submit"]{
+      right: 70px;
+      
+    }
+  }
   @media (min-width: $screen-md) {
     position: absolute;
     top: 25px;
