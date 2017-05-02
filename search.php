@@ -8,7 +8,9 @@
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', 'search'); ?>
+	<div class="search-result">
+  		<?php get_template_part('templates/content', 'search'); ?>
+	</div>
 <?php endwhile; ?>
 
 <?php the_posts_navigation(); ?>
