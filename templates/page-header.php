@@ -116,7 +116,7 @@
                     <div class="col-xs-12">
                         <figure class="profile-members-heading-figure">
                             <img src="<?php echo bp_get_displayed_user_avatar( array('html' => false, 'type' => 'full')); ?>"
-                                 class="profile-members-image" style="max-width: 250px; width: 100%; height: auto;">
+                                 class="profile-members-image" style="max-width: 175px; width: 100%; height: auto;">
                         </figure>
                         <div class="profile-members-heading-infos" style="width:100%;">
 
