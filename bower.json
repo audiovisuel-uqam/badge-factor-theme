@@ -8,7 +8,9 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "3.3.6",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "jpanelmenu": "1.4.1"
+
   },
   "overrides": {
     "bootstrap-sass": {
@@ -37,6 +39,11 @@
       "main": [
         "./assets/stylesheets/font-awesome.scss",
         "./assets/fonts/*"
+      ]
+    },
+    "jpanelmenu": {
+      "main": [
+        "./jquery.jpanelmenu.js"
       ]
     }
   }

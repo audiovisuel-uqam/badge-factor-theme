@@ -19,6 +19,21 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        // Instanciate responsive menu
+        var jPM = $.jPanelMenu({
+          menu: ".header-main-navigation"
+        });
+
+        jPM.on();
+
+        function addSeparatorPrefix(ele){ // Add empty span element for design purpose, in this case a small prefix for section separators
+          $(ele).prepend('<span class="separator-prefix"></span>');
+        }
+
+        $('section div:first-child[class$=-heading]').each(function(){ // For each section div ending with heading classname, trigger function
+          addSeparatorPrefix(this);
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
