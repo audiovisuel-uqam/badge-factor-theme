@@ -8,6 +8,7 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "themes/default";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
@@ -24,3 +25,7 @@
 @import "layouts/organisation";
 @import "layouts/badge";
 @import "layouts/register";
+
+@import "themes/badgeFactor";
+@import "components/blog";
+@import "components/blog-article";

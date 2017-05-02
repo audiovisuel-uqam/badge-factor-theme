@@ -1,2 +1,21 @@
-<time class="updated" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
-<p class="byline author vcard"><?= __('By', 'sage'); ?> <a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?= get_the_author(); ?></a></p>
+<?php
+$months = array(
+	'Jan' => 'Jan',
+	'Feb' => 'FÉV',
+	'Mar' => 'MAR',
+	'Apr' => 'AVR',
+	'May' => 'MAI',
+	'Jun' => 'JUI',
+ 	'Jul' => 'JUI',
+ 	'Aug' => 'Aou',
+ 	'Sep' => 'SEP',
+ 	'Oct' => 'OCT',
+ 	'Nov' => 'NOV',
+ 	'Dec' => 'DÉC',
+	 );
+?>
+
+<span class="blog-page-post-single-date">
+    <em class="blog-page-post-single-date-number"><?= get_post_time('d', true); ?></em>
+    <?= $months[get_post_time('M', true)]; ?>
+</span>
