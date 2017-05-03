@@ -43,7 +43,7 @@ function site_brand() {
         $logo_url = wp_get_attachment_url(get_theme_mod( 'custom_logo' ));
 
         // wrap in image tag, save as string
-        $logo   = '<img src="' . $logo_url . '">';
+        $logo   = '<img src="' . $logo_url . '" class="header-main-logo-image">';
 
         // optional, hide the site name, screen reader friendly
         $output = '<span class="sr-only">' . get_bloginfo( 'name' ) . '</span>';
