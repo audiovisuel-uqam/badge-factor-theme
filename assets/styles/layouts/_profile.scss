@@ -40,7 +40,7 @@
   .profile-members-content {
     width: 68%;
     margin-left:33%;
-    margin-top:-20px;
+    margin-top: 30px;
 
     @media (max-width: $screen-md){
       width:75%;
@@ -371,3 +371,15 @@
     margin: 0px 0 0;
   }
 }
+
+#profile-edit-form{
+  display: none;
+}
+
+@media (max-width: $screen-md){
+    #buddypress .standard-form{
+      input[type="text"], textarea, input[type="password"]{
+        width: 100%;
+      }
+    }
+  }

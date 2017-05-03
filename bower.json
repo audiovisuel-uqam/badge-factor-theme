@@ -8,9 +8,8 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "3.3.6",
-    "font-awesome": "fontawesome#^4.6.3",
-    "jpanelmenu": "1.4.1"
-
+    "jpanelmenu": "1.4.1",
+    "components-font-awesome": "^4.7.0"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -35,15 +34,15 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     },
-    "font-awesome": {
-      "main": [
-        "./assets/stylesheets/font-awesome.scss",
-        "./assets/fonts/*"
-      ]
-    },
     "jpanelmenu": {
       "main": [
         "./jquery.jpanelmenu.js"
+      ]
+    },
+    "components-font-awesome": {
+      "main": [
+        "./fonts/*",
+        "./scss/font-awesome.scss"
       ]
     }
   }

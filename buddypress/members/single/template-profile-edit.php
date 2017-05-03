@@ -23,6 +23,10 @@
 
 
         $user = wp_get_current_user();
+        $userMeta = get_usermeta($user->ID);
+
+        
+
         $currentEmail = $user->user_email;
 
         if(isset( $_POST['submitBase'])){
@@ -32,6 +36,26 @@
             $inputEmail = $_POST['email'];
             $url = $_POST['url'];
             $description = $_POST['description'];
+            $facebook = $_POST['facebook'];
+            $linkedin = $_POST['linkedin'];
+            $twitter = $_POST['twitter'];
+            $google = $_POST['google'];
+            $country = $_POST['country'];
+            $organisation = $_POST['organisation'];
+            $job = $_POST['job'];
+
+
+            $metas = array(
+                'facebook' => $facebook,
+                'linkedin' => $linkedin,
+                'twitter' => $twitter,
+                'google' => $google,
+                'country' => $country,
+                'organisation' => $organisation,
+                'job' => $job,
+            );
+
+
 
             $return = wp_update_user( array( 
                 'ID'         => $user->ID,
@@ -43,8 +67,12 @@
                 'description'=> $description
             ));
 
+            foreach($metas as $key => $value) {
+                update_user_meta( $user->ID, $key, $value );
+            }
+
             $user = wp_get_current_user();
-            
+            $userMeta = get_usermeta($user->id);
         }
 
         
@@ -68,16 +96,12 @@
             }
         }
 
-        
-
-        //var_dump($user);
-
         ?>
 
 
         <?php if(substr($_SERVER['REQUEST_URI'], -2,1) == 1){  ?>
+
            <div id="buddypress">
-            <!--id and classes serves to apply same CSS rules on both forms -->
                 <form class="standard-form" method="post">
                     <div>
                         <label>Prénom</label>
@@ -133,6 +157,7 @@
                         <?php } ?>
 
                     </div>
+
                     <div>
                         <label>Biographie</label>
 
@@ -144,6 +169,76 @@
 
                     </div>
 
+                    <div>
+                        <label>Facebook</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="facebook" type="text" value="<?php echo $facebook ?>">
+                         <?php }else{ ?>
+                             <input name="facebook" type="text" value="<?php echo get_user_meta($user->ID, 'facebook', true);?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>LinkedIn</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="linkedin" type="text" value="<?php echo $linkedin ?>">
+                         <?php }else{ ?>
+                             <input name="linkedin" type="text" value="<?php echo get_user_meta($user->ID, 'linkedin', true) ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>Twitter</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="twitter" type="text" value="<?php echo $twitter ?>">
+                         <?php }else{ ?>
+                             <input name="twitter" type="text" value="<?php echo get_user_meta($user->ID, 'twitter', true) ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>Google +</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="google" type="text" value="<?php echo $google ?>">
+                         <?php }else{ ?>
+                             <input name="google" type="text" value="<?php echo get_user_meta($user->ID, 'google', true) ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>Country</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="country" type="text" value="<?php echo $country ?>">
+                         <?php }else{ ?>
+                             <input name="country" type="text" value="<?php echo get_user_meta($user->ID, 'country', true) ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>Organisation</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="organisation" type="text" value="<?php echo $organisation ?>">
+                         <?php }else{ ?>
+                             <input name="organisation" type="text" value="<?php echo get_user_meta($user->ID, 'organisation', true) ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div>
+                        <label>Job</label>
+
+                        <?php if( isset( $_POST['submitBase']) ){ ?>
+                             <input name="job" type="text" value="<?php echo $job ?>">
+                         <?php }else{ ?>
+                             <input name="job" type="text" value="<?php echo get_user_meta($user->ID, 'job', true) ?>">
+                        <?php } ?>
+
+                    </div>
 
                     <div class="submit">
                         <input type="submit" name="submitBase" value="Save changes">

@@ -43,17 +43,18 @@
 <?php elseif (is_buddypress() && !bp_is_register_page()): ?>
 
     <?php
+    $user = wp_get_current_user();
     $user_id = bp_displayed_user_id();
     $userData = get_userdata($user_id);
-    $userFacebook = bp_get_profile_field_data(array('field' => 'Facebook', 'user_id' => $user_id));
-    $userLinkedin = bp_get_profile_field_data(array('field' => 'Linkedin', 'user_id' => $user_id));
-    $userTwitter = bp_get_profile_field_data(array('field' => 'Twitter', 'user_id' => $user_id));
-    $userGooglePlus = bp_get_profile_field_data(array('field' => 'Google +', 'user_id' => $user_id));
-    $userBio = bp_get_profile_field_data(array('field' => 'Bio', 'user_id' => bp_displayed_user_id()));
-    $userWebsite = bp_get_profile_field_data(array('field' => 'Site internet', 'user_id' => bp_displayed_user_id()));
-    $userCountry = bp_get_profile_field_data(array('field' => 'Lieu', 'user_id' => bp_displayed_user_id()));
-    $userOrganisation = bp_get_profile_field_data(array('field' => 'Organisation', 'user_id' => bp_displayed_user_id()));
-    $userJob = bp_get_profile_field_data(array('field' => 'Emploi', 'user_id' => bp_displayed_user_id()));
+    $userFacebook = get_user_meta($user->ID, 'facebook', true);
+    $userLinkedin = get_user_meta($user->ID, 'linkedin', true);
+    $userTwitter = get_user_meta($user->ID, 'twitter', true);
+    $userGooglePlus = get_user_meta($user->ID, 'google', true);
+    $userBio = get_user_meta($user->ID, 'description', true);
+    $userWebsite = $user->user_url;
+    $userCountry = get_user_meta($user->ID, 'country', true);
+    $userOrganisation = get_user_meta($user->ID, 'organisation', true);
+    $userJob = get_user_meta($user->ID, 'job', true);
 
     ?>
 
