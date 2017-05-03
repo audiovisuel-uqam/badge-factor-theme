@@ -16,8 +16,7 @@
         <span class="glyphicon glyphicon-menu-hamburger header-main-menu-mobile-icon menu-trigger"></span>
         <div class="header-main-logo">
             <a href="<?php echo get_home_url(); ?>" class="header-main-logo-link">
-                <?php // echo Extras\site_brand(); ?>
-                <img class="header-main-logo-image" src="http://placehold.it/400x100" alt="" />
+                <?php echo Extras\site_brand(); ?>
             </a>
         </div>
         <nav class="header-main-navigation">
