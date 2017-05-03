@@ -1,7 +1,4 @@
-
-<?php /*if(is_single()): ?>
-
-  <article <?php post_class(); ?>>
+<article <?php post_class(); ?> >
     <header>
       <h1 class="entry-title blog-article"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry-meta'); ?>
@@ -34,36 +31,3 @@
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
-
-
-
-<?php else:?>
-
-<article <?php post_class("blog-page-post-single"); ?>>
-  <div class="blog-page-post-single-content">
-    <a href="<?php the_permalink(); ?>"><h2 class="blog-page-post-single-title"><?php the_title(); ?></h2></a>
-    <?php get_template_part('templates/entry-meta'); ?>
-    <p class="blog-page-post-single-text">
-      <?php 
-        $content = get_excerpt(120);
-        echo $content;
-      ?>
-    </p>
-  </div>
-</article>
-
-
-<?php endif */ ?>
-
-<article <?php post_class("blog-page-post-single"); ?>>
-  <div class="blog-page-post-single-content">
-    <a href="<?php the_permalink(); ?>"><h2 class="blog-page-post-single-title"><?php the_title(); ?></h2></a>
-    <?php get_template_part('templates/entry-meta'); ?>
-    <p class="blog-page-post-single-text">
-      <?php 
-        $content = get_excerpt(120);
-        echo $content;
-      ?>
-    </p>
-  </div>
-</article>

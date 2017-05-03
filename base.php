@@ -20,7 +20,10 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap container" role="document">
       <div class="content row">
-        <main class="main">
+        <?php if (!is_front_page()): ?>
+          <?php get_template_part('templates/page', 'header'); ?>
+        <?php endif; ?>
+        <main class="<?php echo is_home() ? "blog-page-main-wrap" : "main"; ?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>

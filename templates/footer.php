@@ -16,7 +16,7 @@
         </div>
         <div class="footer-bottom-wrap">
             <div class="footer-copyright-wrap">
-                <p class="footer-copyright-content-text">Tous droits réservés © 2016  <?php echo Extras\site_brand(); ?></p>
+                <p class="footer-copyright-content-text">Tous droits réservés © 2016  <?php //echo Extras\site_brand(); ?></p>
             </div>
             <div class="footer-navigation-wrap">
                 <nav class="footer-navigation">

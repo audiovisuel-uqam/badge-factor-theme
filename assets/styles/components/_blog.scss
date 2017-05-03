@@ -241,7 +241,7 @@ ul.page-numbers {
 aside.sidebar {
   .widget_recent_entries {
     @extend .widget_search;
-
+    
     ul {
       @extend .footer-article-list;
 

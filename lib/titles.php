@@ -18,7 +18,9 @@ function title() {
     return sprintf(__('Search Results for %s', 'sage'), get_search_query());
   } elseif (is_404()) {
     return __('Not Found', 'sage');
-  } else {
+  } elseif(get_post_type() == 'post'){
+    return __('Blog', 'badgefactor-theme');
+  }else {
     return get_the_title();
   }
 }
