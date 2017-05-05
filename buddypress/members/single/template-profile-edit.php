@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-    <?php get_template_part('templates/page', 'header'); ?>
-
 
 
     <style type="text/css">
@@ -278,7 +276,7 @@
             if (bp_is_user_profile_edit() || bp_is_user_change_avatar()){
                 $htmlTemplates .=
                     '<a class="home-page-development-button" style="float:right; max-width: 300px;" href="' . bp_get_displayed_user_link() . '" class="link-edit-profile">' . __('Retour vers votre page de profil', 'stm_child_domain') . '</a>
-						<div style="clear:both;"></div>';
+                        <div style="clear:both;"></div>';
             }
 
             echo $htmlTemplates;

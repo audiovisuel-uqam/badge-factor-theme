@@ -9,7 +9,6 @@
 	get_header();
 ?>
 
-<?php get_template_part('templates/page', 'header'); ?>
 
 <div class="container row">
     <section class="profile-members-badges">
