@@ -20,15 +20,18 @@
 
             <?php
                 $htmlTemplates = '';
-                foreach ($GLOBALS['badgefactor']->get_user_achievements($userID) as $achievement) {
-                    if (!$GLOBALS['badgefactor']->is_achievement_private($achievement->badge_id) || $userID == get_current_user_id())
-                    {
-                        $badgePost = get_post($achievement->badge_id);
+                if (!$GLOBALS['badgefactor']->get_user_achievements($userID)) {
+                    echo "<li class=\"profile-members-badge\"><span class=\"profile-members-badge-description\">". __("None the moment.", 'badgefactor-theme') . "</span></li>";
+                } else {
+                    foreach ($GLOBALS['badgefactor']->get_user_achievements($userID) as $achievement) {
+                        if (!$GLOBALS['badgefactor']->is_achievement_private($achievement->badge_id) || $userID == get_current_user_id())
+                        {
+                            $badgePost = get_post($achievement->badge_id);
 
-                        $currentBadgeUrl = '/?badges='.$badgePost->post_name.'&member='.$currentUserData->user_nicename;
+                            $currentBadgeUrl = '/?badges='.$badgePost->post_name.'&member='.$currentUserData->user_nicename;
 
 
-                        $htmlTemplates .= '<li class="profile-members-badge"><figure class="profile-members-badge-figure">
+                            $htmlTemplates .= '<li class="profile-members-badge"><figure class="profile-members-badge-figure">
                             <a href="' . $currentBadgeUrl . '">' . badgeos_get_achievement_post_thumbnail( $achievement->achievement_id ) . '</a>
                             <figcaption class="profile-members-badge-details">
                                 <span class="profile-members-badge-description">'.get_the_title( $achievement->achievement_id ) .'</span>
@@ -46,9 +49,11 @@
                                         break;
                                 }
                             }
-                        $htmlTemplates .= '</figure></li>';
+                            $htmlTemplates .= '</figure></li>';
+                        }
                     }
                 }
+
                 echo do_shortcode($htmlTemplates);
             ?>
         </ul>

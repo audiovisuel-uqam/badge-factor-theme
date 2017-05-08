@@ -186,9 +186,15 @@
 
             </div>
         </section>
-    <?php else: ?>
-    <?php endif; ?> 
+    <?php endif; ?>
+<?php elseif (preg_match("/^badges$/", $wp->request)): ?>
+    <section class="page-main-heading">
+        <h1 class="page-main-heading-title">
+            <?php _e('Badges', 'badgefactor-theme'); ?>
+        </h1>
+    </section>
 <?php else: ?>
+
     <section class="page-main-heading">
         <h1 class="page-main-heading-title">
             <?php echo Titles\title(); ?>
