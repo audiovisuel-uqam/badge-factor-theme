@@ -2,7 +2,6 @@
 
 	// Get current displayed user ID
 	$userID = bp_displayed_user_id();
-	$currentUserBadgeList = $GLOBALS['badgefactor']->get_user_achievements($userID);
 	$currentUserData = get_userdata($userID);
 	$currentUserNiceUrl = get_permalink(get_option('bp-pages')['members']) . $currentUserData->user_nicename;
 
@@ -21,9 +20,10 @@
             <?php
                 $htmlTemplates = '';
                 if (!$GLOBALS['badgefactor']->get_user_achievements($userID)) {
-                    echo "<li class=\"profile-members-badge\"><span class=\"profile-members-badge-description\">". __("None the moment.", 'badgefactor-theme') . "</span></li>";
+                    echo "<li class=\"profile-members-no-badge\">". __("This member hasn't earned a badge for the moment.", 'badgefactor-theme') . "</li>";
                 } else {
                     foreach ($GLOBALS['badgefactor']->get_user_achievements($userID) as $achievement) {
+
                         if (!$GLOBALS['badgefactor']->is_achievement_private($achievement->badge_id) || $userID == get_current_user_id())
                         {
                             $badgePost = get_post($achievement->badge_id);
