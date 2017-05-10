@@ -164,18 +164,22 @@
                         <!--          <div class="row">-->
                         <div class="col-md-12">
                             <dl class="profile-members-heading-content-desc-list">
+                                <?php if ($userJob): ?>
                                 <dt class="profile-members-heading-content-desc-list-title">Profession</dt>
                                 <dd class="profile-members-heading-content-desc-list-text"><?php echo $userJob; ?></dd>
+                                <?php endif; ?>
+                                <?php if ($userOrganisation): ?>
                                 <dt class="profile-members-heading-content-desc-list-title">Organisation</dt>
                                 <dd class="profile-members-heading-content-desc-list-text"><?php echo $userOrganisation; ?></dd>
+                                <?php endif; ?>
+                                <?php if ($userCountry): ?>
                                 <dt class="profile-members-heading-content-desc-list-title">Lieu</dt>
                                 <dd class="profile-members-heading-content-desc-list-text"><?php echo $userCountry; ?></dd>
+                                <?php endif; ?>
+                                <?php if ($userWebsite): ?>
                                 <dt class="profile-members-heading-content-desc-list-title">Site web</dt>
-                                <dd class="profile-members-heading-content-desc-list-text">
-                                    <a href="<?php echo $userWebsite; ?>" target="_blank"><?php echo $userWebsite; ?></a>
-                                </dd>
-
-
+                                <dd class="profile-members-heading-content-desc-list-text"><a href="<?php echo $userWebsite; ?>" target="_blank"><?php echo $userWebsite; ?></a></dd>
+                                <?php endif; ?>
                             </dl>
                         </div>
                         <!--          </div>-->
