@@ -46,15 +46,15 @@
     $user = wp_get_current_user();
     $user_id = bp_displayed_user_id();
     $userData = get_userdata($user_id);
-    $userFacebook = get_user_meta($user->ID, 'facebook', true);
-    $userLinkedin = get_user_meta($user->ID, 'linkedin', true);
-    $userTwitter = get_user_meta($user->ID, 'twitter', true);
-    $userGooglePlus = get_user_meta($user->ID, 'google', true);
-    $userBio = get_user_meta($user->ID, 'description', true);
-    $userWebsite = $user->user_url;
-    $userCountry = get_user_meta($user->ID, 'country', true);
-    $userOrganisation = get_user_meta($user->ID, 'organisation', true);
-    $userJob = get_user_meta($user->ID, 'job', true);
+    $userFacebook = get_user_meta($user_id, 'facebook', true);
+    $userLinkedin = get_user_meta($user_id, 'linkedin', true);
+    $userTwitter = get_user_meta($user_id, 'twitter', true);
+    $userGooglePlus = get_user_meta($user_id, 'google', true);
+    $userBio = get_user_meta($user_id, 'description', true);
+    $userWebsite = get_user_by('id', $user_id)->user_url;
+    $userCountry = get_user_meta($user_id, 'country', true);
+    $userOrganisation = get_user_meta($user_id, 'organisation', true);
+    $userJob = get_user_meta($user_id, 'job', true);
 
     ?>
 
