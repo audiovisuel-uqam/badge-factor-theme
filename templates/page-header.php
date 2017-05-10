@@ -45,16 +45,16 @@
     <?php
     $user = wp_get_current_user();
     $user_id = bp_displayed_user_id();
-    $userData = get_userdata($user_id);
-    $userFacebook = get_user_meta($user_id, 'facebook', true);
-    $userLinkedin = get_user_meta($user_id, 'linkedin', true);
-    $userTwitter = get_user_meta($user_id, 'twitter', true);
-    $userGooglePlus = get_user_meta($user_id, 'google', true);
-    $userBio = get_user_meta($user_id, 'description', true);
-    $userWebsite = get_user_by('id', $user_id)->user_url;
-    $userCountry = get_user_meta($user_id, 'country', true);
-    $userOrganisation = get_user_meta($user_id, 'organisation', true);
-    $userJob = get_user_meta($user_id, 'job', true);
+    $userData = $user_id ? get_userdata($user_id) : null;
+    $userFacebook = $user_id ? get_user_meta($user_id, 'facebook', true) : null;
+    $userLinkedin = $user_id ? get_user_meta($user_id, 'linkedin', true) : null;
+    $userTwitter = $user_id ? get_user_meta($user_id, 'twitter', true) : null;
+    $userGooglePlus = $user_id ? get_user_meta($user_id, 'google', true) : null;
+    $userBio = $user_id ? get_user_meta($user_id, 'description', true) : null;
+    $userWebsite = $user_id ? get_user_by('id', $user_id)->user_url : null;
+    $userCountry = $user_id ? get_user_meta($user_id, 'country', true) : null;
+    $userOrganisation = $user_id ? get_user_meta($user_id, 'organisation', true) : null;
+    $userJob = $user_id ? get_user_meta($user_id, 'job', true) : null;
 
     ?>
 
