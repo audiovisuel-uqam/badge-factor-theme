@@ -6,7 +6,7 @@
 		include 'template-badge.php';
 	}
 	//Check if it is the profile of the user.
-	else if( bp_is_my_profile() && strpos($wp->request, 'profile')){
+	else if( bp_is_my_profile() ){
 	    include 'template-profile-home.php';
     }
 	else {
