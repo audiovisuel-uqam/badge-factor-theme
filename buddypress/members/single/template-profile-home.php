@@ -30,7 +30,7 @@
 
             $badgePost = get_post($achievement->badge_id);
 
-            $currentBadgeUrl = $currentUserNiceUrl . '/badges/' . $currentUserData->user_nicename . '-' . $badgePost->post_name;
+            $currentBadgeUrl = 'badges/' . $currentUserData->user_nicename . '-' . $badgePost->post_name;
 
 
             $htmlTemplates .= '<li class="profile-members-badge"><figure class="profile-members-badge-figure">
