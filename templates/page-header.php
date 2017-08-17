@@ -128,21 +128,21 @@
                             <ul class="profile-members-social-list">
                                 <?php if ($userLinkedin): ?>
                                     <li class="profile-members-social-item">
-                                        <a class="profile-members-social-link" href="#" title="LinkedIn">
+                                        <a class="profile-members-social-link" href="<?php echo $userLinkedin; ?>" title="LinkedIn">
                                             <i class="fa fa-fw fa-lg fa-linkedin profile-members-social-icon"></i>
                                         </a>
                                     </li>
                                 <?php endif; ?>
                                 <?php if ($userTwitter): ?>
                                     <li class="profile-members-social-item">
-                                        <a class="profile-members-social-link" href="#" title="Twitter">
+                                        <a class="profile-members-social-link" href="<?php echo $userTwitter; ?>" title="Twitter">
                                             <i class="fa fa-fw fa-lg fa-twitter-square profile-members-social-icon"></i>
                                         </a>
                                     </li>
                                 <?php endif; ?>
                                 <?php if ($userFacebook): ?>
                                     <li class="profile-members-social-item">
-                                        <a class="profile-members-social-link" href="#" title="Facebook">
+                                        <a class="profile-members-social-link" href="<?php echo $userFacebook; ?>" title="Facebook">
                                             <i class="fa fa-fw fa-lg fa-facebook-square profile-members-social-icon"></i>
                                         </a>
                                     </li>
