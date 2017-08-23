@@ -32,7 +32,7 @@ get_header();
 
 						}
 
-						$currentBadgeUrl = '/?badges=' . $badgePost->post_name . '&member=' . $currentUserData->user_nicename;
+						$currentBadgeUrl = '/members/'.$currentUserData->user_nicename.'/badges/'.$badgePost->post_name;
 
 
 						$htmlTemplates .= '<li class="profile-members-badge"><figure class="profile-members-badge-figure">
