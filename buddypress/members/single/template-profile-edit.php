@@ -70,7 +70,7 @@
             }
 
             $user = wp_get_current_user();
-            $userMeta = get_usermeta($user->id);
+            $userMeta = get_usermeta($user->ID);
         }
 
         
