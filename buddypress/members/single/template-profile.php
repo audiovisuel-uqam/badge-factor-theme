@@ -34,7 +34,7 @@
                             <figcaption class="profile-members-badge-details">
                                 <span class="profile-members-badge-description">'.get_the_title( $achievement->achievement_id ) .'</span>
                             </figcaption>';
-                             if ($userID == get_current_user_id())
+                             if ( bp_is_my_profile() )
                              {
                                  switch ($GLOBALS['badgefactor']->is_achievement_private($submission->ID))
                                  {
