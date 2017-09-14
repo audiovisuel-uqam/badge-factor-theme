@@ -34,6 +34,19 @@
                             <figcaption class="profile-members-badge-details">
                                 <span class="profile-members-badge-description">'.get_the_title( $achievement->achievement_id ) .'</span>
                             </figcaption>';
+                             if ($userID == get_current_user_id())
+                             {
+                                 switch ($GLOBALS['badgefactor']->is_achievement_private($submission->ID))
+                                 {
+                                     case true:
+                                         $htmlTemplates .= '<button class="private-status private" data-achievement-id="'. $submission->ID . '"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></button>';
+                                         break;
+                                     case false:
+                                     default:
+                                         $htmlTemplates .= '<button class="private-status public" data-achievement-id="'. $submission->ID . '"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>';
+                                         break;
+                                 }
+                             }
                         $htmlTemplates .= '</figure></li>';
                     }
                 }
